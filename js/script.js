@@ -43,12 +43,22 @@ var source = $("#entry-template1").html();
 var template1 = Handlebars.compile(source);
 var lineaSource = $("#entry-template2").html();
 var template2 = Handlebars.compile(lineaSource);
-// var attributo = 0;
+var attributo = 0;
 for (var j = 0; j < 6; j++) {
-  var visualRow2 = template2();
+  var visualRow2 = template2(contex);
   $(".griglia").append(visualRow2);
-  for (var i = 0; i < 6; i++) {
-    var visualRow = template1();
-    $(".linea").append(visualRow);
-  }
 }
+for (var i = 0; i < 6; i++) {
+  var context = {
+    "numeroAtt" : attributo
+  };
+  var visualRow = template1(context);
+  $(".linea").append(visualRow);
+  attributo++;
+}
+
+
+
+var context = {
+  "numeroAtt" : i
+};
