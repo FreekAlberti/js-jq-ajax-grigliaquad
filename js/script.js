@@ -3,5 +3,35 @@
 // Il numero ottenuto appare al centro del quadrato
 
 $(document).ready(function() {
-
+  $(".quadrato").click(function() {
+    var numeroQuadrato = $(this).attr("data-numero");
+    $.ajax(
+      {
+        url: "https://flynn.boolean.careers/exercises/api/random/int",
+        method: "GET",
+        success: function (data, stato) {
+          var numeroCpu = data.response;
+          analisiValoreNumero(numeroCpu, numeroQuadrato);
+        },
+        error: function (richiesta, stato, errori) {
+        console.log(errori);
+        }
+      }
+    );
+  });
 });
+
+
+// FUNCTION
+
+function analisiValoreNumero(numero, numeroQuadrato) {
+  if (numero > 5) {
+    $("[data-numero=" + numeroQuadrato + "]").addClass("verde");
+    $("[data-numero=" + numeroQuadrato + "]").children(".numeroCentrato").text(numero);
+
+  }
+  else if (numero <= 5) {
+    $("[data-numero=" + numeroQuadrato + "]").addClass("giallo");
+    $("[data-numero=" + numeroQuadrato + "]").children(".numeroCentrato").text(numero);
+  }
+}
