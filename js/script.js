@@ -45,10 +45,10 @@ var lineaSource = $("#entry-template2").html();
 var template2 = Handlebars.compile(lineaSource);
 // var attributo = 0;
 for (var j = 0; j < 6; j++) {
-  var visualRow = template(template2);
-  $(".griglia").append(visualRow);
+  var visualRow2 = template2();
+  $(".griglia").append(visualRow2);
   for (var i = 0; i < 6; i++) {
-    var visualRow = template(template1);
+    var visualRow = template1();
     $(".linea").append(visualRow);
   }
 }
