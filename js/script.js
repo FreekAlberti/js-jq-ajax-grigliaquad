@@ -40,9 +40,15 @@ function analisiValoreNumero(numero, numeroQuadrato) {
 //HANDLEBARS
 
 var source = $("#entry-template1").html();
-var template = Handlebars.compile(source);
+var template1 = Handlebars.compile(source);
+var lineaSource = $("#entry-template2").html();
+var template2 = Handlebars.compile(lineaSource);
 // var attributo = 0;
-for (var i = 0; i < 6; i++) {
-  var visualRow = template();
+for (var j = 0; j < 6; j++) {
+  var visualRow = template(template2);
   $(".griglia").append(visualRow);
+  for (var i = 0; i < 6; i++) {
+    var visualRow = template(template1);
+    $(".linea").append(visualRow);
+  }
 }
