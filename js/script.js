@@ -57,9 +57,3 @@ for (var i = 0; i < 6; i++) {
     attributo++;
   }
 }
-var context = {
-  "stelline" : "***********************"
-};
-var html = template(context);
-$("#app").append(html);
-});
