@@ -6,131 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" charset="utf-8"></script>
   <title>Document</title>
 </head>
 <body>
   <div class="wrap">
     <div class="griglia">
-      <div class="linea">
-        <div class="quadrato" data-numero="1">
+      <!-- template -->
+      <script id="entry-template" type="text/x-handlebars-template">
+
+        <div class="linea"></div>
+
+        <div class="quadrato" data-numero="{{numeroAtt}}">
           <p class="numeroCentrato"></p>
         </div>
-        <div class="quadrato" data-numero="2">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="3">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="4">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="5">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="6">
-          <p class="numeroCentrato"></p>
-        </div>
-      </div>
-      <div class="linea">
-        <div class="quadrato" data-numero="7">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="8">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="9">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="10">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="11">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="12">
-          <p class="numeroCentrato"></p>
-        </div>
-      </div>
-      <div class="linea">
-        <div class="quadrato" data-numero="13">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="14">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="15">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="16">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="17">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="18">
-          <p class="numeroCentrato"></p>
-        </div>
-      </div>
-      <div class="linea">
-        <div class="quadrato" data-numero="19">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="20">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="21">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="22">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="23">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="24">
-          <p class="numeroCentrato"></p>
-        </div>
-      </div>
-      <div class="linea">
-        <div class="quadrato" data-numero="25">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="26">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="27">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="28">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="29">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="30">
-          <p class="numeroCentrato"></p>
-        </div>
-      </div>
-      <div class="linea">
-        <div class="quadrato" data-numero="31">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="32">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="33">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="34">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="35">
-          <p class="numeroCentrato"></p>
-        </div>
-        <div class="quadrato" data-numero="36">
-          <p class="numeroCentrato"></p>
-        </div>
-      </div>
+
+      </script>
+      <!-- template -->
     </div>
   </div>
   <script src="js/script.js" charset="utf-8"></script>

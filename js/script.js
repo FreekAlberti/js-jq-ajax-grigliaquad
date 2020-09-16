@@ -35,3 +35,31 @@ function analisiValoreNumero(numero, numeroQuadrato) {
     $("[data-numero=" + numeroQuadrato + "]").children(".numeroCentrato").text(numero);
   }
 }
+
+
+//HANDLEBARS
+
+var source = $("#entry-templat").html();
+var template = Handlebars.compile(source);
+var attributo = 0;
+for (var i = 0; i < 6; i++) {
+  var context = {
+    ".linea" : ????
+  };
+  var html = template(context);
+  $("#app").append(html);
+  for (j = 0; j < 6; j++) {
+    var context = {
+      "numeroAtt" : attributo;
+    };
+    var html = template(context);
+    $(".griglia").append(html);
+    attributo++;
+  }
+}
+var context = {
+  "stelline" : "***********************"
+};
+var html = template(context);
+$("#app").append(html);
+});
