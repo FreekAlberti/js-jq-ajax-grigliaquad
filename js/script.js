@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
   $(".quadrato").click(function() {
-    var numeroQuadrato = $(this).attr("data-numero");
+    var numeroQuadrato = $(this);
     $.ajax(
       {
         url: "https://flynn.boolean.careers/exercises/api/random/int",
@@ -26,13 +26,13 @@ $(document).ready(function() {
 
 function analisiValoreNumero(numero, numeroQuadrato) {
   if (numero > 5) {
-    $("[data-numero=" + numeroQuadrato + "]").addClass("verde");
-    $("[data-numero=" + numeroQuadrato + "]").children(".numeroCentrato").text(numero);
+    $(numeroQuadrato).addClass("verde");
+    $(numeroQuadrato).children(".numeroCentrato").text(numero);
 
   }
   else if (numero <= 5) {
-    $("[data-numero=" + numeroQuadrato + "]").addClass("giallo");
-    $("[data-numero=" + numeroQuadrato + "]").children(".numeroCentrato").text(numero);
+    $(numeroQuadrato).addClass("giallo");
+    $(numeroQuadrato).children(".numeroCentrato").text(numero);
   }
 }
 
@@ -43,16 +43,11 @@ var source = $("#entry-template1").html();
 var template1 = Handlebars.compile(source);
 var lineaSource = $("#entry-template2").html();
 var template2 = Handlebars.compile(lineaSource);
-var attributo = 0;
 for (var j = 0; j < 6; j++) {
   var visualRow2 = template2();
   $(".griglia").append(visualRow2);
 }
 for (var i = 0; i < 6; i++) {
-  var context = {
-    "numeroAtt" : attributo
-  };
-  var visualRow = template1(context);
+  var visualRow = template1();
   $(".linea").append(visualRow);
-  attributo++;
 }
