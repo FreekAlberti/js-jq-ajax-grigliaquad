@@ -50,9 +50,6 @@ for (var j = 0; j < 6; j++) {
 }
 for (var i = 0; i < 6; i++) {
   var context = {
-    "numeroAtt" : i
-  };
-  var context = {
     "numeroAtt" : attributo
   };
   var visualRow = template1(context);
