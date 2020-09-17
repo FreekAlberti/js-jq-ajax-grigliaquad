@@ -5,6 +5,9 @@
 $(document).ready(function() {
   $(".quadrato").click(function() {
     var numeroQuadrato = $(this);
+    if (numeroQuadrato.hasClass("giallo") || numeroQuadrato.hasClass("verde")) {
+      return;
+    }
     $.ajax(
       {
         url: "https://flynn.boolean.careers/exercises/api/random/int",
@@ -21,22 +24,6 @@ $(document).ready(function() {
   });
 });
 
-
-// FUNCTION
-
-function analisiValoreNumero(numero, numeroQuadrato) {
-  if (numero > 5) {
-    $(numeroQuadrato).addClass("verde");
-    $(numeroQuadrato).children(".numeroCentrato").text(numero);
-
-  }
-  else if (numero <= 5) {
-    $(numeroQuadrato).addClass("giallo");
-    $(numeroQuadrato).children(".numeroCentrato").text(numero);
-  }
-}
-
-
 //HANDLEBARS
 
 var source = $("#entry-template1").html();
@@ -50,4 +37,18 @@ for (var j = 0; j < 6; j++) {
 for (var i = 0; i < 6; i++) {
   var visualRow = template1();
   $(".linea").append(visualRow);
+}
+
+// FUNCTION
+
+function analisiValoreNumero(numero, numeroQuadrato) {
+  if (numero > 5) {
+    $(numeroQuadrato).addClass("verde");
+    $(numeroQuadrato).children(".numeroCentrato").text(numero);
+
+  }
+  else if (numero <= 5) {
+    $(numeroQuadrato).addClass("giallo");
+    $(numeroQuadrato).children(".numeroCentrato").text(numero);
+  }
 }
