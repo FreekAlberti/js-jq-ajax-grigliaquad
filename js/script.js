@@ -45,10 +45,13 @@ var lineaSource = $("#entry-template2").html();
 var template2 = Handlebars.compile(lineaSource);
 var attributo = 0;
 for (var j = 0; j < 6; j++) {
-  var visualRow2 = template2(contex);
+  var visualRow2 = template2();
   $(".griglia").append(visualRow2);
 }
 for (var i = 0; i < 6; i++) {
+  var context = {
+    "numeroAtt" : i
+  };
   var context = {
     "numeroAtt" : attributo
   };
@@ -56,9 +59,3 @@ for (var i = 0; i < 6; i++) {
   $(".linea").append(visualRow);
   attributo++;
 }
-
-
-
-var context = {
-  "numeroAtt" : i
-};
